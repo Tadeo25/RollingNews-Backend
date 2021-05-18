@@ -1,11 +1,28 @@
 import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import path from 'path';
 
+//Setup
 //Creo una instancia de expression
 const app = express();
 
 //Creo puerto para ejecutar mi backend
-const port = 4000;
+app.set('port', process.env.PORT || 4000);
 
-app.listen(port, ()=>{
-    console.log("I'm your backend " + port);
+app.listen(app.get('port'), ()=>{
+    console.log("I'm your backend " + app.get('port'));
+});
+
+//Middlewares
+app.use(morgan('dev'));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname, '../public')));
+
+
+//Rutas
+app.get('/', (req, res)=>{
+    res.send("Hola desde el servidor");
 });
