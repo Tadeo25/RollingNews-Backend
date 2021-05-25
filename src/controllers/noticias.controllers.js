@@ -29,10 +29,24 @@ noticiasCtrl.getPrueba = (req, res)=>{
       } catch (error) {
           console.log(error);
           res.status(500).json({
-              mensaje:"Ocurrio un error al intentar agragar la noticia 😵"
+              mensaje:"Ocurrio un error al intentar agragar la noticia a inicio😵"
           })
       }
 
+  };
+
+  noticiasCtrl.noticiasInicio = async(req, res)=>{
+      try {
+    //Obtener arreglo con los productos
+          const arregloNoticia = await NoticiaCollection.find();
+    //Respondemos al frontend
+          res.status(200).json(arregloNoticia);
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            mensaje:"Ocurrio un error al intentar agragar la noticia 😵"
+        });
+      }
   };
 
   export default noticiasCtrl;
