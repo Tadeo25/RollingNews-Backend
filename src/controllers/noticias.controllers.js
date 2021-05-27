@@ -79,5 +79,17 @@ noticiasCtrl.getPrueba = (req, res)=>{
       }
   };
 
+  noticiasCtrl.obtenerNoticia = async(req, res)=>{
+      try {
+          const searchNoticia = await NoticiaCollection.findById(req.params.id);
+          res.status(200).json(searchNoticia);
+      } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            mensaje:"No se pudo encontrar el producto"
+        })
+      }
+  }
+
   export default noticiasCtrl;
 

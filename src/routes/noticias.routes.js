@@ -12,5 +12,6 @@ router
 router
   .route("/:id")
   .delete(noticiasCtrl.eliminarNoticia)
-  .put(noticiasCtrl.editarNoticia);
+  .put(noticiasCtrl.editarNoticia)
+  .get(noticiasCtrl.obtenerNoticia);
 export default router;
