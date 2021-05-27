@@ -65,5 +65,19 @@ noticiasCtrl.getPrueba = (req, res)=>{
       }
   };
 
+  noticiasCtrl.editarNoticia = async(req, res)=>{
+      try {
+          await NoticiaCollection.findByIdAndUpdate(req.params.id, req.body);
+          res.status(200).json({
+              mensaje:"El producto fue modificado 😀"
+          })
+      } catch (error) {
+          console.log(error);
+          res.status(404).json({
+              mensaje:"No se pudo editar producto"
+          })
+      }
+  };
+
   export default noticiasCtrl;
 
