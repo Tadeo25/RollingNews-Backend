@@ -49,5 +49,21 @@ noticiasCtrl.getPrueba = (req, res)=>{
       }
   };
 
+  noticiasCtrl.eliminarNoticia = async (req, res)=>{
+      try {
+          console.log(req.params.id);
+          await NoticiaCollection.findByIdAndDelete(req.params.id);
+          res.status(200).json({
+            mensaje:"La noticia fue eliminada 🤗"
+        });
+
+      } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            mensaje:"Ocurrio un error al ieliminar la noticia 😵"
+        });
+      }
+  };
+
   export default noticiasCtrl;
 
