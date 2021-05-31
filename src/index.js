@@ -22,10 +22,4 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '../public')));
-
-
-//Rutas
-// app.get('/', (req, res)=>{
-//     res.send("Hola desde el servidor");
-// });
 app.use('/api/noticias', noticiasRoutes);

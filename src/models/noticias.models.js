@@ -3,7 +3,7 @@ import mongoose, {Schema} from "mongoose";
 const noticiaSchema = new Schema({
     tituloNoticia:{
         type: String,
-        required: true,
+        // required: true,
         maxlength: 50,
         unique: true
     },
@@ -14,12 +14,12 @@ const noticiaSchema = new Schema({
     },
     cuerpoNoticia:{
         type: String,
-        required: true,
+        // required: true,
         maxlength: 3000
     },
     categoria:{
         type: String,
-        required: true,
+        // required: true,
         maxlength: 20
     }
 });
