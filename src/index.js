@@ -4,6 +4,7 @@ import cors from 'cors';
 import path from 'path';
 import './database';
 import noticiasRoutes from './routes/noticias.routes';
+import usersRoutes from './routes/user.routes';
 
 //Setup
 //Creo una instancia de expression
@@ -23,3 +24,4 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/api/noticias', noticiasRoutes);
+app.use('/api/user', usersRoutes);
