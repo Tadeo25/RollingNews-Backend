@@ -3,23 +3,23 @@ import mongoose, {Schema} from "mongoose";
 const noticiaSchema = new Schema({
     tituloNoticia:{
         type: String,
-        // required: true,
+        required: true,
         maxlength: 50,
         unique: true
     },
     descripcionNoticia:{
         type: String,
-        maxlength: 100,
+        required: true,
         unique: true
     },
     cuerpoNoticia:{
         type: String,
-        // required: true,
+        required: true,
         maxlength: 3000
     },
     categoria:{
         type: String,
-        // required: true,
+        required: true,
         maxlength: 20
     }
 });
