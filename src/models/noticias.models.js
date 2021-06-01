@@ -4,7 +4,6 @@ const noticiaSchema = new Schema({
     tituloNoticia:{
         type: String,
         required: true,
-        maxlength: 50,
         unique: true
     },
     descripcionNoticia:{
@@ -14,13 +13,11 @@ const noticiaSchema = new Schema({
     },
     cuerpoNoticia:{
         type: String,
-        required: true,
-        maxlength: 3000
+        required: true
     },
     categoria:{
         type: String,
         required: true,
-        maxlength: 20
     }
 });
 
