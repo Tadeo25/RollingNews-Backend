@@ -18,6 +18,10 @@ const noticiaSchema = new Schema({
     categoria:{
         type: String,
         required: true,
+    },
+    imagen:{
+        type: String,
+        required: true
     }
 });
 
