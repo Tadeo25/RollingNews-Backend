@@ -1,4 +1,4 @@
-import loginCollection from '../models/login.models'
+// import loginCollection from '../models/login.models'
 import bcryptjs from 'bcryptjs';
 
 const loginCtrl = {};
