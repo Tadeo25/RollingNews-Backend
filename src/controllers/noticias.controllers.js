@@ -15,6 +15,7 @@ noticiasCtrl.getPrueba = (req, res)=>{
               tituloNoticia:req.body.tituloNoticia,
               descripcionNoticia:req.body.descripcionNoticia,
               cuerpoNoticia:req.body.cuerpoNoticia,
+              imagen:req.body.imagen,
               categoria:req.body.categoria
           })
 
